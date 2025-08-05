@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 export default function HelloMyNamePage() {
-  const [name,setName] = useState("")
-  const [Result, setResult ] = useState("")
+  const [name, setName] = useState("")
+  const [Result, setResult] = useState("Please insert your name")
   const greetBtnOnclicked = () => {
-    if (name=="") {
+    if (name == "") {
       setResult(`Please insert your name`)
     }
     else setResult(`Hello : ${name}`)
@@ -20,7 +20,9 @@ export default function HelloMyNamePage() {
       />
       <button className="btn btn-primary" onClick={greetBtnOnclicked}>Greet Me</button>
       {/* Result Text */}
-      <p>{Result}</p>
+      <p className={Result == "Please insert your name"
+        ? "text-danger"
+        : ""}>{Result}</p>
     </div>
   );
 }
