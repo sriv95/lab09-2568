@@ -21,6 +21,7 @@ export default function TaskCard({
   };
 
   const toggleDoneBtnOnClick = () => {
+    isDone = !isDone
     toggleDoneTaskFunc(id);
   };
 
